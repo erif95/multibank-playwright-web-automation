@@ -1,0 +1,44 @@
+{
+  "config": {
+    "baseUrl": "https://trade.multibank.io",
+    "timeout": 15000
+  },
+  "expected": {
+    "pageTitle": "MultiBank.io",
+    "menuCount": 8,
+    "menuNames": ["Dashboard", "Markets", "Trade", "Features", "About Us", "Support", "Log In", "Sign Up"],
+    "marketsUrl": "/markets",
+    "appstoreUrl": "https://apps.apple.com/ae/app/multibank-io-buy-btc-crypto/id1592119946",
+    "playstoreUrl": "https://play.google.com/store/apps/details?id=com.multibank.app"
+  },
+  "navigation": {
+    "menuItems": [
+      { "name": "Dashboard", "locatorKey": "nav.dashboard" },
+      { "name": "Markets", "locatorKey": "nav.markets" },
+      { "name": "Trade", "locatorKey": "nav.trade" },
+      { "name": "Features", "locatorKey": "nav.features" },
+      { "name": "About Us", "locatorKey": "nav.aboutus" },
+      { "name": "Support", "locatorKey": "nav.support" },
+      { "name": "Log In", "locatorKey": "nav.login" },
+      { "name": "Sign Up", "locatorKey": "nav.signup" }
+    ]
+  },
+  "homepage": {
+    "sections": [
+      { "name": "Hero", "locatorKey": "hero.title" },
+      { "name": "Derivatives Tab", "locatorKey": "tabs.derivatives" },
+      { "name": "Spot Tab", "locatorKey": "tabs.spot" },
+      { "name": "MBG Section", "locatorKey": "mbg.title" },
+      { "name": "Market Sentiment", "locatorKey": "sentiment.title" }
+    ]
+  },
+  "tradeSubmenu": {
+    "submenu": [
+      { "name": "Spot", "locatorKey": "nav.spot" },
+      { "name": "Derivatives", "locatorKey": "nav.derivatives" },
+      { "name": "InstantBuy", "locatorKey": "nav.instantbuy" },
+      { "name": "Panic Sell", "locatorKey": "nav.panicsell" },
+      { "name": "Convert", "locatorKey": "nav.convert" }
+    ]
+  }
+}
