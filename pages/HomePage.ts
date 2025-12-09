@@ -24,6 +24,10 @@ export class HomePage extends BasePage {
     
   }
 
+  async chooseTradingSpotCategory(category: string) {
+    await this.click(category);
+  }
+
    async clickFeaturesMenu() {
     await this.click('nav.features');
   }
@@ -137,7 +141,6 @@ export class HomePage extends BasePage {
     await this.scrollTo('app.appstore');
     return await this.isVisible('app.playstore');
  }
-
 
   async verifyNewTabUrl(expectedUrlKey: string) {
     const newTab = await this.switchToNewTab();

@@ -9,8 +9,20 @@ import { Page, Locator } from '@playwright/test';
 export class LocatorReader {
   private locators: Map<string, string> = new Map();
 
-  constructor(fileName: string) {
+  constructor(...fileNames: string[]) {
+        
+    for (const fileName of fileNames) {
+      this.loadFile(fileName);
+      }
+    }
+
+  private loadFile(fileName: string) {
     const filePath = path.join(__dirname, '..', 'locators', fileName);
+
+    if (!fs.existsSync(filePath)) {
+      throw new Error(`Locator file not found: ${filePath}`);
+    }
+
     const content = fs.readFileSync(filePath, 'utf-8');
     
     content.split('\n').forEach(line => {

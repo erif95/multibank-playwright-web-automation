@@ -5,14 +5,18 @@ export class BasePage {
   protected page: Page;
   protected locators: LocatorReader;
 
-  constructor(page: Page, locatorFile: string) {
+  constructor(page: Page, ...props: string[]) {
     this.page = page;
-    this.locators = new LocatorReader(locatorFile);
+    this.locators = new LocatorReader(...props);
   }
 
   // Get locator by key from properties file
   $(key: string): Locator {
     return this.locators.getLocator(this.page, key).first();
+  }
+
+   $$(key: string): Locator {
+   return this.locators.getLocator(this.page, key);
   }
 
   async navigate(url: string) {
@@ -26,6 +30,11 @@ export class BasePage {
     } catch {
       return false;
     }
+  }
+
+  async waitUntilReady(key: string, timeout = 20000): Promise<void> {
+    await this.$(key).waitFor({ state: 'visible', timeout });
+    await this.$(key).waitFor({ state: 'attached', timeout });
   }
 
   async isElementVisible (target: string | Locator, timeout = 10000): Promise<boolean> {
@@ -46,18 +55,22 @@ export class BasePage {
 }
 
   async click(key: string) {
+    await this.waitUntilReady(key); 
     await this.$(key).click();
   }
 
   async hover(key: string) {
+    await this.waitUntilReady(key); 
     await this.$(key).hover();
   }
 
   async getText(key: string): Promise<string> {
+    await this.waitUntilReady(key); 
     return this.$(key).innerText();
   }
 
   async scrollTo(key: string) {
+    await this.waitUntilReady(key); 
     await this.$(key).scrollIntoViewIfNeeded();
   }
 

@@ -40,5 +40,13 @@
       { "name": "Panic Sell", "locatorKey": "nav.panicsell" },
       { "name": "Convert", "locatorKey": "nav.convert" }
     ]
+  },
+  "tradingSpot": {
+    "categories": [
+      { "name": "ALL", "locatorKey": "all_category", "pairSuffix":  ["BTC","DAI","EUR","USDT","USDC","USD","AED"] },
+      { "name": "USDT", "locatorKey": "usdt_category", "pairSuffix": ["USDT"] },
+      { "name": "BTC", "locatorKey": "btc_category", "pairSuffix": ["BTC"] },
+      { "name": "FIAT", "locatorKey": "fiat_category", "pairSuffix": ["AED","USD","EUR"] }
+    ]
   }
 }

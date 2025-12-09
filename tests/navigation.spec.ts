@@ -47,7 +47,7 @@ test.describe('Navigation & Layout Tests', () => {
    
   });
 
-  test('TC06 - Scroll and direct to playstore', async ({page}) => {
+  test('TC06 - Scroll and direct to playstore', async () => {
     await homePage.scrollToPlayStore();
     await homePage.clickPlayStore();
     await homePage.verifyNewTabUrl('expected.playstoreUrl');
