@@ -43,6 +43,12 @@ export class HomePage extends BasePage {
    async clickPlayStore() {
     await this.click('app.playstore');
   }
+
+  async clickWhyMultiBank() {
+     await this.click('nav.aboutus');
+     const spotMenu = await this.getSubmenuAboutusLocator("Why Multibank?");
+     spotMenu.click();
+  }
  
   async getSubmenuTradeLocator(name: string) {
     const raw = this.locators.get('nav.tradesubmenu'); 
@@ -151,6 +157,31 @@ export class HomePage extends BasePage {
     const currentUrl = newTab.url();
      expect(currentUrl).toContain(expectedUrl);
   }
+
+  async verifyAboutUsContent(): Promise<{ valid: boolean; errors: string[] }> {
+    const errors: string[] = [];
+    const sections = this.data.getArray<{ name: string; locatorKey: string; expectedText: string }>('aboutUs.sections');
+
+    for (const section of sections) {
+      try {
+        const locator = this.$(section.locatorKey);
+        await locator.waitFor({ state: 'attached' });
+        await locator.waitFor({ state: 'visible' });
+        const normalizeText = (text: string) => text.replace(/\s+/g, ' ').trim();
+        const text = normalizeText(await locator.innerText()).trim();
+        console.log(text);
+        if (!text.includes(section.expectedText)) {
+          errors.push(`Mismatch for "${section.name}": expected "${section.expectedText}", found "${text}"`);
+        }
+      } catch (err: any) {
+        errors.push(`Error verifying "${section.name}": ${err.message}`);
+      }
+  }
+
+  return { valid: errors.length === 0, errors };
+}
+
+
   // Expose data reader for tests
   getData(): DataReader { return this.data; }
 }

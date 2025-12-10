@@ -40,22 +40,31 @@ test.describe('Navigation & Layout Tests', () => {
     expect(isAllVisible).toBeTruthy();
   });
 
-  test('TC05 - All features submenu visible', async ({ page }) => {
+  test('TC05 - All about us sub menu visible', async ({ page }) => {
     await homePage.clickAboutUs();
     const isAllVisible = await homePage.verifySubmenuAboutUs();
     expect(isAllVisible).toBeTruthy();
    
   });
 
-  test('TC06 - Scroll and direct to playstore', async () => {
+    test('TC06 - Scroll and direct to appstore', async () => {
+    await homePage.scrollToAppStore();
+    await homePage.clickAppStore();
+    await homePage.verifyNewTabUrl('expected.appstoreUrl');
+  });
+
+  test('TC07 - Scroll and direct to playstore', async () => {
     await homePage.scrollToPlayStore();
     await homePage.clickPlayStore();
     await homePage.verifyNewTabUrl('expected.playstoreUrl');
   });
 
-  test('TC07 - Scroll and direct to appstore', async () => {
-    await homePage.scrollToAppStore();
-    await homePage.clickAppStore();
-    await homePage.verifyNewTabUrl('expected.appstoreUrl');
+
+
+  test('TC08 - validate about US multibank content', async ({page}) => {
+    await homePage.clickWhyMultiBank();
+    const result = await homePage.verifyAboutUsContent();
+    if (!result.valid) console.log(result.errors);
+      expect(result.valid, result.errors.join(', ')).toBeTruthy();
   });
 });

@@ -48,5 +48,41 @@
       { "name": "BTC", "locatorKey": "btc_category", "pairSuffix": ["BTC"] },
       { "name": "FIAT", "locatorKey": "fiat_category", "pairSuffix": ["AED","USD","EUR"] }
     ]
+  },
+  "aboutUs": { 
+    "sections": [
+      { "name": "Heading", "locatorKey": "aboutus.heading", "expectedText": "Why MultiBank?" },
+      { "name": "Intro Paragraph", "locatorKey": "aboutus.intro", "expectedText": "Since our inception, we have successfully stamped our authority in the world of trading. Along the way, we have pioneered and shaped the foreign exchange industry and continue to create exemplary products, services, and trading platforms." },
+      { "name": "Card 1 Title", "locatorKey": "aboutus.card_title", "expectedText": "Heavily Regulated across 5 continents" },
+      { "name": "Card 2 Title", "locatorKey": "aboutus.card_title_2", "expectedText": "Paid-up capital of over $322 million" },
+      { "name": "Card 3 Title", "locatorKey": "aboutus.card_title_3", "expectedText": "Regulated Spot Exchange" },
+      { "name": "Card 4 Title", "locatorKey": "aboutus.card_title_4", "expectedText": "Leverage up to 250x" },
+      { "name": "Content card 1", "locatorKey": "aboutus.content_card", "expectedText": "Part of the MultiBank Group, which is closely supervised by 16 financial regulators worldwide across various jurisdictions, ensuring investor protection. The group includes companies regulated by ASIC, BaFin, FMA, TFG, AUSTRAC, VFSC, CIMA, FSC, and MAS." },
+      { "name": "Content card 2", "locatorKey": "aboutus.content_card_2", "expectedText": "Due to our accumulated paid-up capital, we are globally recognized as one of the largest online financial derivatives providers."},
+      { "name": "Content card 3", "locatorKey": "aboutus.content_card_3", "expectedText": "MEX Digital Pty Ltd, is regulated by the Australian Securities Investment Commission (ASIC) and registered as a DCE with AUSTRAC." },
+      { "name": "Content card 4", "locatorKey": "aboutus.content_card_4", "expectedText": "We provide one of the highest levels of leverage in the market, helping traders to multiply their profits." },
+      { "name": "Middle Section", "locatorKey": "aboutus.middle_section_title", "expectedText": "Multibank Group Established in 2005" },
+      { "name": "Middle Section Content 1", "locatorKey": "aboutus.middle_section_content", "expectedText": "MultiBank Group was established in California, USA, in 2005. Since then, we have evolved into one of the largest financial derivatives providers worldwide, with a current paid-up capital of over $322 million."},
+      { "name": "Middle Section Content 2", "locatorKey": "aboutus.middle_section_content_2", "expectedText": "We service an extensive client-base of over 1,000,000+ customers from across 90 countries."},
+      { "name": "Advance Card Title 1", "locatorKey": "aboutus.advance_card_title", "expectedText": "Funds withdrawal within 24 hours"},
+      { "name": "Advance Card Title 2", "locatorKey": "aboutus.advance_card_title_2", "expectedText": "Cutting-edge trading platforms"},
+      { "name": "Advance Card Title 3", "locatorKey": "aboutus.advance_card_title_3", "expectedText": "State of the art products"},
+      { "name": "Advance Card Title 4", "locatorKey": "aboutus.advance_card_title_4", "expectedText": "Instant and stable nano-second execution"},
+      { "name": "Advance Card Title 5", "locatorKey": "aboutus.advance_card_title_5", "expectedText": "Record breaking financial performance"},
+      { "name": "Advance Card Title 6", "locatorKey": "aboutus.advance_card_title_6", "expectedText": "Global presence in leading financial hubs"},
+      { "name": "Advance Card Content 1", "locatorKey": "aboutus.advance_card_content", "expectedText": "Funds withdrawal has been made easy and accessible for the benefit of our investors."},
+      { "name": "Advance Card Content 2", "locatorKey": "aboutus.advance_card_content_2", "expectedText": "State-of-the-art trading platforms that are designed and developed to provide stability and enable real-time trading."},
+      { "name": "Advance Card Content 3", "locatorKey": "aboutus.advance_card_content_3", "expectedText": "Trade over 20,000 instruments including Forex, Metals, Shares, Indices, Commodities & Cryptocurrencies."},
+      { "name": "Advance Card Content 4", "locatorKey": "aboutus.advance_card_content_4", "expectedText": "Zero Commission Trading.Negative Balance Protection.No requotes and No Rejections, and No Restrictions on EA."},
+      { "name": "Advance Card Content 5", "locatorKey": "aboutus.advance_card_content_5", "expectedText": "With a turnover of over US$ 6.8 Trillion in 2020 (exceeding the 2023 annual turnover of US$ 15.6 Billion), we deliver results that instill confidence."},
+      { "name": "Advance Card Content 6", "locatorKey": "aboutus.advance_card_content_6", "expectedText": "We serve an international demographic of clients in collaboration with affiliates from our 20+ offices located within the financial centers of the world."},
+      { "name": "Footer Title", "locatorKey": "aboutus.asic_title", "expectedText": "ASIC MEX Exchange"},
+      { "name": "Footer Content 1", "locatorKey": "aboutus.asic_paragraph", "expectedText": "MEX Digital Pty Ltd, with Australian company number (ACN) 645 164 209, is authorized and regulated by the Australian Securities and Investment Commission (\"ASIC\")."},
+      { "name": "Footer Content 2", "locatorKey": "aboutus.view_license_button", "expectedText": "VIEW LICENSE"},
+      { "name": "Footer Title 2", "locatorKey": "aboutus.deep_pool_liquidity_title", "expectedText": "DEEP POOL OF LIQUIDITY"},
+      { "name": "Footer Content 3", "locatorKey": "aboutus.deep_liquidity_heading", "expectedText": "MultiBank io offers deep liquidity ensuring the best prices on big orders."},
+      { "name": "Footer Title 3", "locatorKey": "aboutus.start_trading_title", "expectedText": "Start Trading Now"},
+      { "name": "Footer Content 4", "locatorKey": "aboutus.start_trading_description", "expectedText": "Join the biggest regulated crypto exchange on the market"}
+    ] 
   }
 }

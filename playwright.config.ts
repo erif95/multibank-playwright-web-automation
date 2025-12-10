@@ -5,10 +5,15 @@ export default defineConfig({
   timeout: 60000,
   expect: { timeout: 15000 },
 
+  fullyParallel: true,   // allow tests within a file to run in parallel
+  retries: 3,            // retry failed tests
+  workers: 1,           // global max workers (can be overridden per project)
+  
   use: {
     baseURL: 'https://trade.multibank.io',
     viewport: { width: 1920, height: 1080 },
     screenshot: 'only-on-failure',
+    trace: 'on-first-retry',
   },
 
   projects: [
@@ -18,11 +23,12 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         launchOptions: {
           args: [
-            '--disable-popup-blocking',        // disables pop-up blocking UI
-            '--disable-notifications',         // prevents popup permission prompts
+            '--disable-popup-blocking',
+            '--disable-notifications',
           ]
         }
-      }
+      },
+      workers: 1, // only 5 parallel workers for Chromium
     },
     {
       name: 'firefox',
@@ -30,13 +36,13 @@ export default defineConfig({
         ...devices['Desktop Firefox'],
         launchOptions: {
           firefoxUserPrefs: {
-            'dom.disable_open_during_load': false, // allow JS to open new windows without prompts
-            'privacy.popups.policy': 1,            // allow open windows
+            'dom.disable_open_during_load': false,
+            'privacy.popups.policy': 1,
             'privacy.popups.showBrowserMessage': false,
-            
           }
         }
-      }
+      },
+      workers: 1, // only 5 parallel workers for Firefox
     },
     {
       name: 'webkit',
@@ -44,10 +50,11 @@ export default defineConfig({
         ...devices['Desktop Safari'],
         launchOptions: {
           args: [
-            '--disable-popup-blocking' // limited effect but Safari accepts the flag
+            '--disable-popup-blocking'
           ]
         }
-      }
+      },
+      workers: 1, // only 1 worker for WebKit
     },
   ],
 });
